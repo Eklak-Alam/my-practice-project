@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - Manage Your Tasks</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-tasks"></i> Todo App</h1>
+            <p>Organize your life, one task at a time</p>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <span class="stat-number" id="total-tasks">0</span>
+                <span class="stat-label">Total Tasks</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="completed-tasks">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="pending-tasks">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="todo-input" placeholder="What needs to be done?" maxlength="100">
+                <button id="add-btn" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <div class="todo-list-container">
+            <ul id="todo-list" class="todo-list">
+                <!-- Tasks will be dynamically added here -->
+            </ul>
+            <div id="empty-state" class="empty-state">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>No tasks yet</h3>
+                <p>Add a task above to get started!</p>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <button id="clear-completed" class="btn-secondary">
+                <i class="fas fa-trash"></i> Clear Completed
+            </button>
+            <button id="clear-all" class="btn-danger">
+                <i class="fas fa-broom"></i> Clear All
+            </button>
+        </div>
+
+        <footer class="footer">
+            <p>Double-click to edit tasks • Drag to reorder</p>
+        </footer>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Task</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="edit-input" placeholder="Edit your task...">
+                <div class="modal-actions">
+                    <button id="save-edit" class="btn-primary">Save Changes</button>
+                    <button id="cancel-edit" class="btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
