@@ -40,3 +40,8 @@ A modern, feature-rich Todo application built with vanilla HTML, CSS, and JavaSc
 git clone https://github.com/yourusername/todo-app.git
 cd todo-app
 # Open index.html in your browser
+
+## 🧠 Future Enhancements
+- 🕒 Add task scheduling with reminders
+- 🌙 Add dark mode
+- 🔄 Sync tasks across devices using backend API
